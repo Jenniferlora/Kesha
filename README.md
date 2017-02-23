@@ -36,7 +36,7 @@ For each problem you should:
 2. Enter the right url with those query parameteres into postman to get the right JSON.
 3. Copy that json and assign the object to a variable.  
 4. Render the right parts of that JSON to the DOM.
-5. 
+
 
 ##Import Information:
 The iTunes API technically doesn't serve data in the JSON format.  It serves JSONP data.  [What's JSONP?](https://en.wikipedia.org/wiki/JSONP).  This isn't a big deal, but it does mean you have to add this line to your ajax call:
