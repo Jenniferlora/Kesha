@@ -5,7 +5,7 @@ Ke$ha, musical legend and future nobel laureate, wants to create a website to pr
 
 
 
-![](https://i.giphy.com/nXMZHOG0aoVUI.gif)
+![](https://i.giphy.com/3o6ZsTlDN953zedm5q.gif)
 
 
 
