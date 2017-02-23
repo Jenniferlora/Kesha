@@ -39,7 +39,7 @@ For each problem you should:
 5. 
 
 ##Import Information:
-The iTunes API technically doesn't serve data in the JSON format.  It serves JSONP data.  !(What's JSONP?)[https://en.wikipedia.org/wiki/JSONP].  This isn't a big deal, but it does mean you have to add this line to your ajax call:
+The iTunes API technically doesn't serve data in the JSON format.  It serves JSONP data.  [What's JSONP?](https://en.wikipedia.org/wiki/JSONP).  This isn't a big deal, but it does mean you have to add this line to your ajax call:
 
 ```dataType: 'JSONP',```
 
@@ -56,4 +56,4 @@ So your ajax call might look something like:
     }
 ```
 
-cool?
+Then it's just business as usual.  Cool?
