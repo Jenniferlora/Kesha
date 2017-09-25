@@ -28,32 +28,37 @@ Ke$ha's website should be one page.  That page should be broken into 3 sections.
 5. Make some pretty CSS!  You can change the background colors of each section, just make sure that each section is distinct.
 
 
-## Workflow:
+## Suggested Workflow:
 
 For each problem you should:
 
 1. Visit the [iTunes API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/) and determine what query parameters you need to get the correct information.
 2. Enter the right url with those query parameteres into postman to get the right JSON.
-3. Copy that json and assign the object to a variable.  
-4. Render the right parts of that JSON to the DOM.
+3. Recreate that query in an ajax call.
+4. Create a function that renders the results from the call.
+5. Call that function as the ajax callback to render the results.
 
 
-## Important Information:
+
+## Additional Important Information:
 The iTunes API technically doesn't serve data in the JSON format.  It serves JSONP data.  [What's JSONP?](https://en.wikipedia.org/wiki/JSONP).  This isn't a big deal, but it does mean you have to add this line to your ajax call:
 
 ```dataType: 'JSONP',```
 
 or things will break.
 
-So your ajax call might look something like:
+So after all that, your ajax call might look something like:
 
 ```$.ajax({
     method: 'GET',
     url: '//your url',
     dataType: 'JSONP',
-    success: (data) => {
-      ///your code
-    }
+    success: function(data){
+        console.log(data);
+        renderAll(data);
+      }
+    })
+     
 ```
 
 Then it's just business as usual.  Cool?
