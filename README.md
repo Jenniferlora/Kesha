@@ -24,7 +24,7 @@ Ke$ha's website should be one page.  That page should be broken into 3 sections.
 1. The first section should render an *unordered list* of all of her albums.  Give this section a header that says "Ke$ha's Albums!" with an 'aqua' background.
 2. The second section should render images of her albums *that are not explicit* (gotta protect the children).  Albums that are explicit should not be rendered.  Give this section a header that says "Ke$ha's Kid Friendly Jams" and a background that is 'rebeccapurple'.
 3. The third section should return her 5 most recent tracks.  Give this section a header that says "Ke$ha's Latest Hits".
-4. Optional - Do you think that the old Ke$ha is still alive somewhere in the new "Kesha" (with no '$')?  Write a haiku expressing your thoughts on this controversial move.
+4. Optional - Do you think that the old Ke$ha is still alive somewhere in the new "Kesha" (with no '$')?  Write a haiku expressing your thoughts on this controversial rebranding.
 5. Make some pretty CSS!  You can change the background colors of each section, just make sure that each section is distinct.
 
 
