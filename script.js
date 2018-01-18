@@ -73,27 +73,39 @@ function mostRecent() {
 	$.ajax({
 		method: 'GET',
 		url:
-			'https://itunes.apple.com/search?term=ke$ha&media=music&entity=album&sort=recent&limit=5',
+			'https://itunes.apple.com/search?term=ke$ha&media=music&entity=song&sort=recent&limit=5',
 		dataType: 'JSONP',
 		success: function(data) {
+			console.log(data);
 			var $header = $('<header>', { text: ` Ke$ha's Latest Hits` });
 			$('body').append($header);
 			var $third = $('<div>').attr('id', 'third');
 			$('body').append($third);
 			console.log(data);
-			var recentAlbums = data.results;
-			recentAlbums.forEach(function(album) {
-				var albumImage = album.artworkUrl100;
-				console.log(albumImage);
+			var recentSongs = data.results;
+			recentSongs.forEach(function(song) {
+				var songImage = song.trackViewUrl;
+				console.log(songImage);
 
 				var $albumCovers = $('<div>').attr('class', 'covers recent');
-				$albumCovers.data = album.collectionName;
-				$albumCovers.css('background-image', `url(${albumImage})`);
+				$albumCovers.text(song.trackName);
+				$albumCovers.attr('data', song.trackName);
+				var pic = song.artworkUrl60;
+				$albumCovers.css(
+					'background-image',
+					`url(https://cdn3.iconfinder.com/data/icons/buttons/512/Icon_3-512.png`
+				);
+				$albumCovers.on('click', playsong);
 				console.log($albumCovers);
 				$third.append($albumCovers);
 			});
 		},
 	});
+}
+//Trying to add song snippet.
+function playsong(event) {
+	var song = event.target.data;
+	console.log(song);
 }
 
 renderAll();
