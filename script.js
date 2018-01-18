@@ -20,12 +20,15 @@ function renderAll() {
 			console.log(albums);
 
 			var $body = $('body');
-			var $list = $('<ul>');
-			$list.attr('id', 'list');
-			$body.append($list);
+			var $first = $('<div>').attr('id', 'first');
+			$body.append($first);
 
 			var $header = $('<header>', { text: `Ke$ha's Albums!` });
-			$list.append($header);
+			$first.append($header);
+
+			var $list = $('<ul>');
+			$list.attr('id', 'list');
+			$first.append($list);
 
 			console.log($body);
 			console.log($list);
@@ -47,6 +50,8 @@ function renderAll() {
 function kidFriendly(albums) {
 	var $header = $('<header>', { text: ` Ke$ha's Kid Friendly Jams` });
 	$('body').append($header);
+	var $second = $('<div>').attr('id', 'second');
+	$('body').append($second);
 	mostRecent();
 	albums.forEach(function(album) {
 		if (album.collectionExplicitness === 'notExplicit') {
@@ -54,11 +59,11 @@ function kidFriendly(albums) {
 			var albumImage = album.artworkUrl100;
 			console.log(albumImage);
 
-			var $albumCovers = $('<div>').attr('class', 'covers');
+			var $albumCovers = $('<div>').attr('class', 'covers kid');
 			$albumCovers.data = album.collectionName;
 			$albumCovers.css('background-image', `url(${albumImage})`);
 			console.log($albumCovers);
-			$('body').append($albumCovers);
+			$second.append($albumCovers);
 		}
 	});
 }
@@ -73,17 +78,19 @@ function mostRecent() {
 		success: function(data) {
 			var $header = $('<header>', { text: ` Ke$ha's Latest Hits` });
 			$('body').append($header);
+			var $third = $('<div>').attr('id', 'third');
+			$('body').append($third);
 			console.log(data);
 			var recentAlbums = data.results;
 			recentAlbums.forEach(function(album) {
 				var albumImage = album.artworkUrl100;
 				console.log(albumImage);
 
-				var $albumCovers = $('<div>').attr('class', 'covers');
+				var $albumCovers = $('<div>').attr('class', 'covers recent');
 				$albumCovers.data = album.collectionName;
 				$albumCovers.css('background-image', `url(${albumImage})`);
 				console.log($albumCovers);
-				$('body').append($albumCovers);
+				$third.append($albumCovers);
 			});
 		},
 	});
