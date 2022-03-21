@@ -8,19 +8,16 @@ console.log("Script.js linked!");
 
 // 1. The first section should render an *unordered list* of all of her albums.  Give this section a header that says "Ke$ha's Albums!" with an 'aqua' background.
 
-// https://playwave-server.herokuapp.com/musics
+// https://playwave.herokuapp.com/
 
 
 
 function renderAll() {
 	$.ajax({
-		type: "POST",
-		url: 'https://playwave-server.herokuapp.com/musics',
+		type: "GET",
+		url: 'https://playwave.herokuapp.com/ke$ha',
 		contentType: "application/json",
 		dataType: "json",
-		data: JSON.stringify({
-			musicTitle: "ke$ha"
-		}),
 		success: function(response) {
 			for(let i =0; i < response.data.length; i++){
         const song_name = `${response.data[i].artist.name} - ${response.data[i].title_short}`
